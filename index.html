@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Bettina Ituarte - Abogada</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* -------- RESET -------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* -------- HEADER -------- */
+  header {
+  background: linear-gradient(rgba(15, 32, 39, 0.8), rgba(15, 32, 39, 0.8)),
+              url('https://previews.123rf.com/images/uxinput/uxinput2303/uxinput230301178/201350811-gavel-and-scales-of-justice-on-white-background-3d-illustration.jpg') no-repeat center center;
+  background-size: contain;
+  /* background-color: #0f2027; relleno elegante si sobra espacio */
+  color: #fff;
+  text-align: center;
+  padding: 6rem 1rem;
+  animation: fadeIn 1.5s ease;
+}
+
+
+     header h1 {
+  font-family: "Playfair Display", serif; /* tipografía elegante */
+  font-size: 3.2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  color: #e6c45e; /* dorado más fuerte */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* resalta sobre el fondo */
+}
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.95;
+    }
+
+    /* -------- NAV -------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      background: #0f2027;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem 1.5rem;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      background: #c5a46d;
+      color: #000;
+      border-radius: 30px;
+    }
+
+    /* -------- SECCIONES -------- */
+    section {
+      padding: 4rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.4rem;
+      color: #0f2027;
+      position: relative;
+      animation: slideUp 1s ease;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #c5a46d;
+      margin: 0.7rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* -------- ABOUT -------- */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    .about.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about img {
+      width: 280px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .about div {
+      max-width: 600px;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+
+    /* -------- SERVICES -------- */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      background: linear-gradient(135deg, #fdfdfd, #fff);
+    }
+
+    .card h3 {
+      color: #0f2027;
+      margin: 1rem 0;
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      color: #c5a46d;
+      margin-bottom: 1rem;
+    }
+
+    /* -------- CONTACT -------- */
+    .contact {
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+      font-size: 1.1rem;
+    }
+
+    .contact.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: #0f2027;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s;
+    }
+
+    .contact a:hover {
+      background: #c5a46d;
+      color: #000;
+    }
+
+    /* -------- FOOTER -------- */
+    footer {
+      background: #0f2027;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    footer a {
+      color: #c5a46d;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* -------- ANIMACIONES -------- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dra. Bettina Ituarte</h1>
+    <p>Abogada - Asesoría Jurídica Integral</p>
+  </header>
+
+  <nav>
+    <a href="#about">Sobre mí</a>
+    <a href="#services">Servicios</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+
+  <section id="about">
+    <h2>Sobre mí</h2>
+    <div class="about">
+      <img src="https://via.placeholder.com/280x350" alt="Abogada">
+      <div>
+        <p>
+          Soy la Dra. <b>Bettina Ituarte</b>, abogada especializada en derecho civil, laboral y comercial.  
+          Con más de 10 años de trayectoria, ofrezco asesoramiento jurídico integral a empresas y particulares, 
+          priorizando el compromiso, la ética profesional y la búsqueda de soluciones eficientes y personalizadas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Servicios</h2>
+    <div class="services">
+      <div class="card">
+        <i class="fas fa-balance-scale"></i>
+        <h3>Derecho Civil</h3>
+        <p>Contratos, sucesiones, responsabilidad civil y más.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-briefcase"></i>
+        <h3>Derecho Laboral</h3>
+        <p>Asesoramiento en conflictos laborales, despidos y convenios.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-building"></i>
+        <h3>Derecho Comercial</h3>
+        <p>Constitución de sociedades, asesoría a empresas y litigios.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contacto</h2>
+    <div class="contact">
+      <p>📧 <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
+      <p>📞 <a href="tel:+541112345678">+54 9 381 572 8668</a></p>
+      <a href="https://wa.me/5493815728668" target="_blank">💬 WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Estudio Jurídico - Dra. Bettina Ituarte</p>
+    <p><a href="#">Política de Privacidad</a> | <a href="#">Aviso Legal</a></p>
+  </footer>
+
+  <script>
+    // Animaciones al hacer scroll
+    const elements = document.querySelectorAll(".about, .card, .contact");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
