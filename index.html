@@ -281,16 +281,62 @@
   <section id="contact">
     <h2>Contacto</h2>
     <div class="contact">
-      <p>📧 <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
-      <p>📞 <a href="tel:+541112345678">+54 9 381 572 8668</a></p>
-      <a href="https://wa.me/5493815728668" target="_blank">💬 WhatsApp</a>
+          <p>📧 <a href="mailto:dra.bettinaituarte@gmail.com">dra.bettinaituarte@gmail.com</a></p>
+          <p>📞 <a href="tel:+541112345678">+54 9 381 572 8668</a></p>
+          <a href="https://wa.me/5493815728668" target="_blank" aria-label="WhatsApp" style="font-size:1.7rem; vertical-align:middle;"><i class="fab fa-whatsapp"></i></a>
     </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Estudio Jurídico - Dra. Bettina Ituarte</p>
     <p><a href="#">Política de Privacidad</a> | <a href="#">Aviso Legal</a></p>
-  </footer>
+    </footer>
+    <style>
+      /* Loader styles */
+      #loader-bg {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: #fff;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.4s;
+      }
+      #loader {
+        border: 7px solid #e6c45e;
+        border-top: 7px solid #0f2027;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    <!-- Loader animación -->
+    <div id="loader-bg">
+      <div id="loader"></div>
+    </div>
+    <script>
+      // Loader animación
+      window.addEventListener('load', function() {
+        document.getElementById('loader-bg').style.display = 'none';
+
+        // Animaciones al hacer scroll
+        const elements = document.querySelectorAll(".about, .card, .contact");
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        }, { threshold: 0.2 });
+        elements.forEach(el => observer.observe(el));
+      });
+    </script>
 
   <script>
     // Animaciones al hacer scroll
